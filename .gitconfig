@@ -1,0 +1,19 @@
+[user]
+	name = Cypress Frankenfeld
+	email = iamcypress@gmail.com
+[push]
+	default = simple
+[core]
+	editor = subl -n -w
+	excludesfile = /Users/cypressf/.config/git/ignore
+	autocrlf = input
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[alias]
+	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
