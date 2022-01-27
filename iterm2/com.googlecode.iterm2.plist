@@ -2,16 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AppleAntiAliasingThreshold</key>
-	<integer>1</integer>
-	<key>ApplePressAndHoldEnabled</key>
-	<false/>
-	<key>AppleScrollAnimationEnabled</key>
-	<integer>0</integer>
-	<key>AppleSmoothFixedFontsSizeThreshold</key>
-	<integer>1</integer>
-	<key>AppleWindowTabbingMode</key>
-	<string>manual</string>
 	<key>CopySelection</key>
 	<false/>
 	<key>Default Bookmark Guid</key>
@@ -163,13 +153,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.052484858315438032</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.8833775520324707</real>
+				<real>0.77005227387352482</real>
 				<key>Red Component</key>
-				<real>0.9259033203125</real>
+				<real>0.804595947265625</real>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
@@ -268,13 +258,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.839141845703125</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.99263292551040649</real>
+				<real>0.83303020785989024</real>
 				<key>Red Component</key>
-				<real>0.37597531080245972</real>
+				<real>0.32266806811094284</real>
 			</dict>
 			<key>Ansi 15 Color</key>
 			<dict>
@@ -1479,9 +1469,9 @@
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.8833775520324707</real>
+				<real>0.79081798585214036</real>
 				<key>Red Component</key>
-				<real>0.9259033203125</real>
+				<real>0.828887939453125</real>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
@@ -1580,13 +1570,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.813629150390625</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.99263292551040649</real>
+				<real>0.80754862059737442</real>
 				<key>Red Component</key>
-				<real>0.37597531080245972</real>
+				<real>0.29858064372092485</real>
 			</dict>
 			<key>Ansi 15 Color</key>
 			<dict>
