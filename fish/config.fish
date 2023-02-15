@@ -4,3 +4,6 @@ if status is-interactive
 end
 status is-login; and pyenv init --path | source
 status is-interactive; and pyenv init - | source
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
