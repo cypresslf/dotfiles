@@ -18,7 +18,7 @@ SETUVAR --export fish_color_host_remote:yellow
 SETUVAR --export fish_color_match:magenta
 SETUVAR --export fish_color_normal:normal
 SETUVAR --export fish_color_operator:yellow
-SETUVAR --export fish_color_param:\x2d\x2ddim
+SETUVAR --export fish_color_param:brblue
 SETUVAR --export fish_color_quote:green
 SETUVAR --export fish_color_redirection:magenta
 
