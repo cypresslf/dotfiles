@@ -1,0 +1,123 @@
+* {
+  font-family: FiraCode Nerd Font, monospace;
+  font-weight: bold;
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: black;
+  color: #cdd6f4;
+}
+
+tooltip {
+  background: #1e1e2e;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #11111b;
+}
+
+#workspaces button {
+  padding: 5px;
+  color: #313244;
+  margin-right: 5px;
+}
+
+#workspaces button.active {
+  color: #a6adc8;
+}
+
+#workspaces button.focused {
+  color: #a6adc8;
+  background: #eba0ac;
+}
+
+#workspaces button.urgent {
+  color: #11111b;
+  background: #a6e3a1;
+}
+
+#workspaces button:hover {
+  background: #11111b;
+  color: #cdd6f4;
+}
+
+#custom-language,
+#custom-updates,
+#custom-dark-mode,
+#window,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#workspaces,
+#tray,
+#backlight {
+  padding: 0px 10px;
+}
+
+#tray {
+  margin-right: 10px;
+}
+
+#workspaces {
+  margin-left: 10px;
+  padding-right: 0px;
+  padding-left: 5px;
+}
+
+#custom-wifi-selector {
+  color: white;
+}
+
+#custom-dark-mode {
+  font-size: 20px;
+}
+
+#custom-updates {
+  color: #f5c2e7;
+  margin-right: 10px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#window {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+#clock {
+  color: #fab387;
+  margin-left: 5px;
+  border-right: 0px;
+}
+
+#calendar {
+  border-right: 0px;
+  margin-left: 0px;
+}
+
+#network {
+  color: #f9e2af;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#pulseaudio {
+  color: #89b4fa;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#pulseaudio.microphone {
+  color: #cba6f7;
+  border-left: 0px;
+  border-right: 0px;
+  margin-right: 5px;
+}
+
+#battery {
+  color: #a6e3a1;
+  margin-right: 10px;
+  border-left: 0px;
+}
