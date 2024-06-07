@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if pgrep -x "wl-screenrec" > /dev/null; then
+    pkill -INT wl-screenrec
+else
+    wl-screenrec -g "$(slurp)" -f $(xdg-user-dir VIDEOS)/Screencasts/$(date +'%s.mp4') &
+fi
