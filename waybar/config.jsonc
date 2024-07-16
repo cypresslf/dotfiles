@@ -16,7 +16,8 @@
     "backlight",
     "custom/dark-mode",
     "pulseaudio",
-    "pulseaudio#microphone"
+    "pulseaudio#microphone",
+    "custom/power"
   ],
 
   "hyprland/window": {
@@ -28,11 +29,11 @@
     "on-click": "activate"
   },
   "custom/updates": {
-    "format": " {}",
+    "format": "\udb80\uddda {}",
     "interval": 7200, // every two hours
-    "exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'", // # of updates and tooltip details
-    "exec-if": "test -n \"$(checkupdates)\"", // only show if there are updates
-    "on-click": "kgx -e sudo pacman -Syu; pkill -SIGRTMIN+8 waybar", // update system and refresh icon
+    "exec": "i=$(pamac-checkupdates -a); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'", // # of updates and tooltip details
+    "exec-if": "test -n \"$(pamac-checkupdates -a)\"", // only show if there are updates
+    "on-click": "kgx -e pamac upgrade -a; pkill -SIGRTMIN+8 waybar", // update system and refresh icon
     "signal": 8
   },
   "custom/dark-mode": {
@@ -43,8 +44,8 @@
     "signal": 9
   },
   "tray": {
-    "icon-size": 13,
-    "spacing": 10
+    "icon-size": 18,
+    "spacing": 15
   },
   "clock": {
     "format": "{:%R  %d/%m}",
@@ -60,8 +61,7 @@
   },
   "backlight": {
     "device": "intel_backlight",
-    "format": "{icon} {percent}%",
-    "format-icons": ["", "", ""],
+    "format": "\udb83\udcf2 {percent}",
     "on-scroll-up": "brightnessctl set 1%+",
     "on-scroll-down": "brightnessctl set 1%-",
     "min-length": 6
@@ -73,36 +73,43 @@
       "critical": 20
     },
     "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
+    "format-charging": "\udb85\udc0b {capacity}%",
+    "format-plugged": "\udb81\udea5 {capacity}%",
     "format-alt": "{time} {icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+    "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "tooltip": false,
-    "format-muted": " Muted",
+    "format-muted": "\udb81\udf5f Muted",
     "on-click": "pamixer -t",
     "on-scroll-up": "pamixer -i 5",
     "on-scroll-down": "pamixer -d 5",
     "scroll-step": 5,
     "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""]
+      "headphone": "\uee58",
+      "hands-free": "\uee59",
+      "headset": "\uee59",
+      "phone": "\uf095",
+      "portable": "\uf095",
+      "car": "\uf1b9",
+      "default": ["\udb81\udd7f", "\udb81\udd80", "\udb81\udd7e"]
     }
   },
   "pulseaudio#microphone": {
     "format": "{format_source}",
-    "format-source": " {volume}%",
-    "format-source-muted": " Muted",
+    "format-source": "\udb80\udf6c {volume}%",
+    "format-source-muted": "\udb80\udf6d Muted",
     "on-click": "pamixer --default-source -t",
     "on-scroll-up": "pamixer --default-source -i 5",
     "on-scroll-down": "pamixer --default-source -d 5",
     "scroll-step": 5
+  },
+  "custom/power": {
+    "format": "{}",
+    "exec": "echo ; echo  logout",
+    "on-click": "wlogout",
+    "interval": 86400, // once every day
+    "tooltip": true
   }
 }
