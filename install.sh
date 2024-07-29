@@ -6,3 +6,4 @@ ln -s ${BASEDIR}/git ~/.config
 ln -s ${BASEDIR}/hypr ~/.config
 ln -s ${BASEDIR}/waybar ~/.config
 ln -s ${BASEDIR}/foot ~/.config
+ln -s ${BASEDIR}/.zshrc ~/
