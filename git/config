@@ -11,6 +11,6 @@
 	process = git-lfs filter-process
 	required = true
 [submodule]
-	recurse = true
+	recurse = false
 [pull]
 	ff = only
