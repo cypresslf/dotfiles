@@ -33,7 +33,7 @@
     "interval": 7200, // every two hours
     "exec": "i=$(pamac-checkupdates -a); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'", // # of updates and tooltip details
     "exec-if": "test -n \"$(pamac-checkupdates -a)\"", // only show if there are updates
-    "on-click": "foot -e pamac upgrade -a; pkill -SIGRTMIN+8 waybar", // update system and refresh icon
+    "on-click": "foot -H pamac upgrade -a; pkill -SIGRTMIN+8 waybar", // update system and refresh icon
     "signal": 8
   },
   "custom/dark-mode": {
