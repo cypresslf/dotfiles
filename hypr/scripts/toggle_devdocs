@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DEVDOCS_APP_ID="ahiigpfcghkbjfcibpojancebdfjmoop"
+
+if hyprctl clients | grep -q "$DEVDOCS_APP_ID"; then
+  # DevDocs is running, close it
+  hyprctl dispatch closewindow "class:.*$DEVDOCS_APP_ID.*"
+else
+  # DevDocs is not running, launch it
+  hyprctl dispatch exec "/usr/bin/chromium --profile-directory=Default --app-id=$DEVDOCS_APP_ID"
+fi
