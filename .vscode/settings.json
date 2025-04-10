@@ -1,6 +1,7 @@
 {
   "cSpell.words": [
     "activewindow",
+    "activeworkspace",
     "ahiigpfcghkbjfcibpojancebdfjmoop",
     "altwin",
     "binde",
@@ -23,8 +24,10 @@
     "keybinds",
     "killactive",
     "lalt",
+    "minimizewindow",
     "movefocus",
     "movetoworkspace",
+    "movetoworkspacesilent",
     "movewindow",
     "noshadow",
     "playerctl",
@@ -43,6 +46,7 @@
     "togglespecialworkspace",
     "togglesplit",
     "trunc",
+    "unminimizewindow",
     "windowrule",
     "windowrulev",
     "XCURSOR",

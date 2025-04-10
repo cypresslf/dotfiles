@@ -1,11 +1,21 @@
 #!/bin/bash
-
 DEVDOCS_APP_ID="ahiigpfcghkbjfcibpojancebdfjmoop"
+DEVDOCS_CLASS="chrome-${DEVDOCS_APP_ID}-Default"
+DEVDOCS_CLIENT=$(hyprctl clients -j | jq -r ".[] | select(.class == \"$DEVDOCS_CLASS\")")
 
-if hyprctl clients | grep -q "$DEVDOCS_APP_ID"; then
-  # DevDocs is running, close it
-  hyprctl dispatch closewindow "class:.*$DEVDOCS_APP_ID.*"
+# Check if DevDocs is running
+if [[ -n "$DEVDOCS_CLIENT" ]]; then
+    workspace_id=$(echo "$DEVDOCS_CLIENT" | jq -r ".workspace.id")
+    if (( workspace_id < 0 )); then
+        # Window is in a special workspace, bring it back
+        current_workspace=$(hyprctl activeworkspace -j | jq -r '.id')
+        hyprctl dispatch movetoworkspace "$current_workspace,class:$DEVDOCS_CLASS"
+        hyprctl dispatch focuswindow "class:$DEVDOCS_CLASS"
+    else
+        # Window is visible, move to special workspace
+        hyprctl dispatch movetoworkspacesilent "special:devdocs,class:$DEVDOCS_CLASS"
+    fi
 else
-  # DevDocs is not running, launch it
-  hyprctl dispatch exec "/usr/bin/chromium --profile-directory=Default --app-id=$DEVDOCS_APP_ID"
+    # DevDocs is not running, launch it
+    hyprctl dispatch exec "/usr/bin/chromium --profile-directory=Default --app-id=$DEVDOCS_APP_ID"
 fi
