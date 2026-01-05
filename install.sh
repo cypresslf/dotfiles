@@ -8,6 +8,7 @@ ln -s ${BASEDIR}/sway ~/.config
 ln -s ${BASEDIR}/waybar ~/.config
 ln -s ${BASEDIR}/foot ~/.config
 ln -s ${BASEDIR}/darkman ~/.config
+ln -s ${BASEDIR}/xdg-desktop-portal ~/.config
 ln -s ${BASEDIR}/darkman ~/.local/share
 ln -s ${BASEDIR}/mako ~/.config
 ln -sf ~/.config/mako/config-light ~/.config/mako/config
