@@ -9,5 +9,6 @@ ln -s ${BASEDIR}/waybar ~/.config
 ln -s ${BASEDIR}/foot ~/.config
 ln -s ${BASEDIR}/darkman ~/.config
 ln -s ${BASEDIR}/mako ~/.config
+ln -sf ~/.config/mako/config-light ~/.config/mako/config
 ln -s ${BASEDIR}/.zshrc ~/
 ln -s ${BASEDIR}/tofi.conf ~/.config
