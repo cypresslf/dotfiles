@@ -12,6 +12,7 @@ ln -s ${BASEDIR}/mako ~/.config
 ln -sf ~/.config/mako/config-light ~/.config/mako/config
 ln -s ${BASEDIR}/.zshrc ~/
 ln -s ${BASEDIR}/tofi.conf ~/.config
+ln -s ${BASEDIR}/otters.jpg ~/Pictures/
 
 FIREFOX_PROFILE_PATH=$(echo $HOME/.mozilla/firefox/*.default-release)
 echo 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);' >> "$FIREFOX_PROFILE_PATH/user.js"
