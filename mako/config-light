@@ -1,0 +1,14 @@
+# Global settings
+font=Cantarell 11
+background-color=#FFFFFF
+text-color=#222222
+border-color=#577CA2
+border-size=2
+padding=8
+default-timeout=10000
+max-icon-size=32
+border-radius=10
+
+[urgency=critical]
+border-color=#D9785B
+default-timeout=0
