@@ -1,0 +1,78 @@
+#!/bin/sh
+
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 [light|dark]"
+    exit 1
+fi
+
+mode="$1"
+
+# Common paths
+foot_config_dir="$HOME/.config/foot"
+mako_config_dir="$HOME/.config/mako"
+
+
+# Validate mode and set variables
+if [ "$mode" = "dark" ]; then
+    gtk_theme="adw-gtk3-dark"
+    color_scheme="prefer-dark"
+    foot_theme="dark.ini"
+    mako_config="config-dark"
+elif [ "$mode" = "light" ]; then
+    gtk_theme="adw-gtk3"
+    color_scheme="prefer-light"
+    foot_theme="light.ini"
+    mako_config="config-light"
+else
+    echo "Invalid mode: $mode"
+    exit 1
+fi
+
+# --- Foot Terminal Theme ---
+# Set the color theme for future instances of foot terminal
+ln -sf "$foot_config_dir/$foot_theme" "$foot_config_dir/theme.ini"
+
+# Update existing ZSH instances
+config_path="$foot_config_dir/$mode.ini"
+if [ -f "$config_path" ]; then
+    zsh_pids=$(pgrep zsh)
+    # Function to send commands to all zsh processes
+    send_to_zsh() {
+        local cmd="$1"
+        for pid in $zsh_pids; do
+            # Check if the process has a TTY and it's a ZSH shell
+            if [ -e "/proc/$pid/fd/0" ]; then
+                echo -ne "$cmd" > "/proc/$pid/fd/0"
+            fi
+        done
+    }
+
+    # ex: 'regular0=0b0b0b' or 'bright0=0b0b0b'
+    sed -n -r 's/^\w*(regular|bright)([0-9])=([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2}).*/\1 \2 \3 \4 \5/p' "$config_path" |
+        while read color_type idx r g b; do
+            if [ "$color_type" = "bright" ]; then
+                idx="$((idx + 8))"
+            fi
+            send_to_zsh "\e]4;$idx;rgb:$r/$g/$b\e\\"
+        done
+
+    # ex: 'foreground=ffffff'
+    sed -n -r 's/^\w*foreground=([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2}).*/\1 \2 \3/p' "$config_path" |
+        while read r g b; do
+            send_to_zsh "\e]10;rgb:$r/$g/$b\e\\"
+        done
+
+    # ex: 'background=0b0b0b'
+    sed -n -r 's/^\w*background=([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2}).*/\1 \2 \3/p' "$config_path" |
+        while read r g b; do
+            send_to_zsh "\e]11;rgb:$r/$g/$b\e\\"
+        done
+fi
+
+# --- GTK Theme ---
+gsettings set org.gnome.desktop.interface color-scheme "$color_scheme"
+gsettings set org.gnome.desktop.interface gtk-theme "$gtk_theme"
+
+# --- Mako Notifications ---
+ln -sf "$mako_config_dir/$mako_config" "$mako_config_dir/config"
+makoctl reload
