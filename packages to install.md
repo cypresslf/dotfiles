@@ -1,5 +1,6 @@
 # packages to install
 
+git-lfs
 direnv
 zsh-syntax-highlighting
 zsh-autosuggestions
