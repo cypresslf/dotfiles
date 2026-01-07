@@ -14,12 +14,10 @@ mako_config_dir="$HOME/.config/mako"
 
 # Validate mode and set variables
 if [ "$mode" = "dark" ]; then
-    gtk_theme="adw-gtk3-dark"
     color_scheme="prefer-dark"
     foot_theme="dark.ini"
     mako_config="config-dark"
 elif [ "$mode" = "light" ]; then
-    gtk_theme="adw-gtk3"
     color_scheme="prefer-light"
     foot_theme="light.ini"
     mako_config="config-light"
@@ -71,7 +69,6 @@ fi
 
 # --- GTK Theme ---
 gsettings set org.gnome.desktop.interface color-scheme "$color_scheme"
-gsettings set org.gnome.desktop.interface gtk-theme "$gtk_theme"
 
 # --- Mako Notifications ---
 ln -sf "$mako_config_dir/$mako_config" "$mako_config_dir/config"
