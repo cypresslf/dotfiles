@@ -1,5 +1,6 @@
 # packages to install
 
+pamixer
 brightnessctl
 adw-gtk-theme
 gnome-keyring
