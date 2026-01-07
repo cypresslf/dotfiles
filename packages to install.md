@@ -1,5 +1,6 @@
 # packages to install
 
+pacman-contrib
 pamixer
 brightnessctl
 adw-gtk-theme

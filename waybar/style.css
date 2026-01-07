@@ -16,6 +16,10 @@ tooltip {
   border-color: #11111b;
 }
 
+tooltip label {
+  font-family: "Fira Code", monospace;
+}
+
 #workspaces button {
   padding: 5px;
   color: #313244;
