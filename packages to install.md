@@ -1,5 +1,7 @@
 # packages to install
 
+gnome-keyring
+hyprpolkitagent
 git-lfs
 direnv
 zsh-syntax-highlighting
