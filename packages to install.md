@@ -16,7 +16,6 @@ man-pages
 slack-desktop
 tailscale
 signal-desktop
-polkit-kde-agent
 wl-clip-persist
 swayosd
 hypridle
