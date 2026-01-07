@@ -1,5 +1,6 @@
 # packages to install
 
+brightnessctl
 adw-gtk-theme
 gnome-keyring
 hyprpolkitagent
