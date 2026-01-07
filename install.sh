@@ -33,3 +33,5 @@ FIREFOX_PROFILE_PATH=$(echo $HOME/.mozilla/firefox/*.default-release)
 echo 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);' >> "$FIREFOX_PROFILE_PATH/user.js"
 mkdir -p "$FIREFOX_PROFILE_PATH/chrome"
 ln -s ${BASEDIR}/firefox/userChrome.css "$FIREFOX_PROFILE_PATH/chrome/userChrome.css"
+
+gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3'

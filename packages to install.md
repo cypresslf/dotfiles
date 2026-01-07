@@ -1,5 +1,6 @@
 # packages to install
 
+adw-gtk-theme
 gnome-keyring
 hyprpolkitagent
 git-lfs
