@@ -50,6 +50,7 @@ slurp
 qt6-wayland
 qt5-wayland
 grim
+xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 uwsm
 hyprland
