@@ -19,7 +19,6 @@
     "pulseaudio#microphone",
     "custom/power"
   ],
-
   "hyprland/window": {
     "format": "{}"
   },
@@ -30,10 +29,10 @@
   },
   "custom/updates": {
     "format": "\udb80\uddda {}",
-    "interval": 7200, // every two hours
-    "exec": "i=$(checkupdates; paru -Qua); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r' | sed 's/\\r$//'", // # of updates and tooltip details
-    "exec-if": "test -n \"$(checkupdates; paru -Qua)\"", // only show if there are updates
-    "on-click": "foot -H paru -Syu; pkill -SIGRTMIN+8 waybar", // update system and refresh icon
+    "interval": 7200,
+    "exec": "i=$(checkupdates; paru -Qua); c=$(printf '%s\n' \"$i\" | sed '/^$/d' | wc -l); [ \"$c\" -eq 0 ] && exit 0; echo \"$c\"; printf '%s\n' \"$i\" | column -t | tr '\n' '\r' | sed 's/\\r$//'",
+    "hide-empty-text": true,
+    "on-click": "foot -H sh -lc 'paru -Syu && notify-send \"Updates\" \"Done\" || notify-send -u critical \"Updates\" \"FAILED\"; pkill -SIGRTMIN+8 waybar'",
     "signal": 8
   },
   "custom/dark-mode": {
