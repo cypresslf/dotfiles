@@ -6,12 +6,24 @@ ln -s ${BASEDIR}/git ~/.config
 ln -s ${BASEDIR}/hypr ~/.config
 ln -s ${BASEDIR}/sway ~/.config
 ln -s ${BASEDIR}/waybar ~/.config
-ln -s ${BASEDIR}/foot ~/.config
-ln -s ${BASEDIR}/darkman ~/.config
+
+mkdir -p ~/.config/foot
+ln -s ${BASEDIR}/foot/foot.ini ~/.config/foot/foot.ini
+ln -s ${BASEDIR}/foot/dark.ini ~/.config/foot/dark.ini
+ln -s ${BASEDIR}/foot/light.ini ~/.config/foot/light.ini
+ln -s ${BASEDIR}/foot/light.ini ~/.config/foot/theme.ini
+
+mkdir -p ~/.config/mako
+ln -s ${BASEDIR}/mako/config-dark ~/.config/mako/config-dark
+ln -s ${BASEDIR}/mako/config-light ~/.config/mako/config-light
+ln -s ${BASEDIR}/mako/config-light ~/.config/mako/config
+
+mkdir -p ~/.config/darkman
+mkdir -p ~/.local/share/darkman
+ln -s ${BASEDIR}/darkman/config.yaml ~/.config/darkman/config.yaml
+ln -s ${BASEDIR}/darkman/switch-theme ~/.local/share/darkman/switch-theme
+
 ln -s ${BASEDIR}/xdg-desktop-portal ~/.config
-ln -s ${BASEDIR}/darkman ~/.local/share
-ln -s ${BASEDIR}/mako ~/.config
-ln -sf ~/.config/mako/config-light ~/.config/mako/config
 ln -s ${BASEDIR}/.zshrc ~/
 ln -s ${BASEDIR}/tofi.conf ~/.config
 ln -s ${BASEDIR}/otters.jpg ~/Pictures/
