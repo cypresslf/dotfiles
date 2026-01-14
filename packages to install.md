@@ -1,5 +1,6 @@
 # packages to install
 
+wl-clipboard
 pacman-contrib
 pamixer
 brightnessctl
