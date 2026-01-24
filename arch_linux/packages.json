@@ -1,0 +1,104 @@
+{
+  "packages": [
+    "base",
+    "linux",
+    "linux-firmware",
+    "intel-ucode",
+    "efibootmgr",
+    "sudo",
+    "zram-generator",
+
+    "networkmanager",
+    "network-manager-applet",
+    "wpa_supplicant",
+
+    "bluez",
+    "bluez-utils",
+
+    "pipewire",
+    "pipewire-alsa",
+    "pipewire-pulse",
+    "pipewire-jack",
+    "wireplumber",
+    "gst-plugin-pipewire",
+
+    "cups",
+    "cups-pk-helper",
+    "system-config-printer",
+
+    "power-profiles-daemon",
+    "sof-firmware",
+
+    "btrfs-progs",
+    "snapper",
+    "lvm2",
+
+    "git",
+    "git-lfs",
+    "base-devel",
+    "pacman-contrib",
+    "direnv",
+
+    "zsh",
+    "zsh-syntax-highlighting",
+    "zsh-autosuggestions",
+
+    "man-db",
+    "man-pages",
+
+    "wget",
+    "vim",
+    "nano",
+    "htop",
+    "smartmontools",
+
+    "firefox",
+    "foot",
+    "nautilus",
+
+    "gnome-keyring",
+
+    "wl-clipboard",
+    "wl-clip-persist",
+    "pamixer",
+    "brightnessctl",
+
+    "waybar",
+    "mako",
+    "swaybg",
+    "swayosd",
+    "grim",
+    "slurp",
+    "darkman",
+
+    "qt5-wayland",
+    "qt6-wayland",
+    "xdg-utils",
+    "xdg-desktop-portal-gtk",
+    "xdg-desktop-portal-hyprland",
+
+    "hyprland",
+    "uwsm",
+    "hypridle",
+    "hyprlock",
+    "hyprpolkitagent",
+
+    "sddm",
+
+    "adw-gtk-theme",
+    "ttf-firacode-nerd",
+
+    "tailscale",
+    "signal-desktop",
+
+    "mesa",
+    "vulkan-intel",
+    "intel-media-driver",
+    "libva",
+
+    "nvidia-open",
+    "nvidia-utils",
+    "nvidia-settings",
+    "nvidia-prime"
+  ]
+}
