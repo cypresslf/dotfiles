@@ -17,15 +17,15 @@
     "custom/dark-mode",
     "pulseaudio",
     "pulseaudio#microphone",
-    "custom/power"
+    "custom/power",
   ],
   "hyprland/window": {
-    "format": "{}"
+    "format": "{}",
   },
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
-    "on-click": "activate"
+    "on-click": "activate",
   },
   "custom/updates": {
     "format": "\udb80\uddda {}",
@@ -33,52 +33,53 @@
     "exec": "i=$(checkupdates; paru -Qua); c=$(printf '%s\n' \"$i\" | sed '/^$/d' | wc -l); [ \"$c\" -eq 0 ] && exit 0; echo \"$c\"; printf '%s\n' \"$i\" | column -t | tr '\n' '\r' | sed 's/\\r$//'",
     "hide-empty-text": true,
     "on-click": "foot -H sh -lc 'paru -Syu && notify-send \"Updates\" \"Done\" || notify-send -u critical \"Updates\" \"FAILED\"; pkill -SIGRTMIN+8 waybar'",
-    "signal": 8
+    "signal": 8,
   },
   "custom/dark-mode": {
     "format": "{}",
     "interval": 3600000,
     "exec": "if [ $(darkman get) = 'dark' ]; then echo ''; else echo ''; fi",
     "on-click": "darkman toggle; pkill -SIGRTMIN+9 waybar",
-    "signal": 9
+    "signal": 9,
   },
   "tray": {
     "icon-size": 18,
-    "spacing": 15
+    "spacing": 15,
   },
   "clock": {
-    "format": "{:%R  %d/%m}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "format": "{:%R  %b %e}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
   },
   "network": {
-    "format-wifi": "{essid} 󰤨 {signalStrength}%",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
+    "format-wifi": "{essid} 󰤨  {signalStrength}%",
+    "format-ethernet": "",
+    "tooltip-format": "{ifname} via {gwaddr} 󰑩",
+    "format-linked": "{ifname} (No IP) 󰅤",
     "format-disconnected": "󰤯",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
   },
   "backlight": {
     "device": "intel_backlight",
-    "format": "\udb83\udcf2 {percent}",
+    "format": "\udb83\udcf2  {percent}",
     "on-scroll-up": "brightnessctl set 1%+",
     "on-scroll-down": "brightnessctl set 1%-",
-    "min-length": 6
+    "min-length": 6,
   },
   "battery": {
     "states": {
       "good": 95,
       "warning": 30,
-      "critical": 20
+      "critical": 20,
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": "\udb85\udc0b {capacity}%",
-    "format-plugged": "\udb81\udea5 {capacity}%",
+    "format": "{icon}  {capacity}%",
+    "format-charging": "{icon}  {capacity}% 󱐋",
+    "format-plugged": "{icon}  {capacity}% ",
+    "format-full": "{icon}  {capacity}% ",
     "format-alt": "{time} {icon}",
-    "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
+    "format-icons": ["", "", "", "", ""],
   },
   "pulseaudio": {
-    "format": "{icon} {volume}%",
+    "format": "{icon}   {volume}%",
     "tooltip": false,
     "format-muted": "\udb81\udf5f Muted",
     "on-click": "pamixer -t",
@@ -92,25 +93,25 @@
       "phone": "\uf095",
       "portable": "\uf095",
       "car": "\uf1b9",
-      "default": ["\udb81\udd7f", "\udb81\udd80", "\udb81\udd7e"]
+      "default": ["", "", ""],
     },
-    "smooth-scrolling-threshold": 2.0
+    "smooth-scrolling-threshold": 2.0,
   },
   "pulseaudio#microphone": {
     "format": "{format_source}",
-    "format-source": "\udb80\udf6c {volume}%",
-    "format-source-muted": "\udb80\udf6d Muted",
+    "format-source": "  {volume}%",
+    "format-source-muted": "   Muted",
     "on-click": "pamixer --default-source -t",
     "on-scroll-up": "pamixer --default-source -i 1 --set-limit 33",
     "on-scroll-down": "pamixer --default-source -d 1",
     "scroll-step": 5,
-    "smooth-scrolling-threshold": 2.0
+    "smooth-scrolling-threshold": 2.0,
   },
   "custom/power": {
     "format": "{}",
     "exec": "echo ; echo  logout",
     "on-click": "wlogout",
     "interval": 86400, // once every day
-    "tooltip": true
-  }
+    "tooltip": true,
+  },
 }
