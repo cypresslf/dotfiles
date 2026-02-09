@@ -83,7 +83,8 @@
     "hyprlock",
     "hyprpolkitagent",
 
-    "sddm",
+    "greetd",
+    "greetd-regreet",
 
     "adw-gtk-theme",
     "ttf-firacode-nerd",

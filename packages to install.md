@@ -41,7 +41,8 @@ foot
 xdg-desktop-portal-gtk
 
 snapper
-sddm
+greetd
+greetd-regreet
 xorg-xinit
 xorg-server
 xf86-video-nouveau
