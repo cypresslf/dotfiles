@@ -21,6 +21,7 @@ paru -S --noconfirm --needed \
   wl-screenrec \
   wlogout \
   arch-manwarn \
+  greetd-regreet-git \
 
 # enable services
 systemctl enable greetd

@@ -1,0 +1,10 @@
+[background]
+path = "/usr/share/backgrounds/otters.jpg"
+fit = "Cover"
+
+[GTK]
+theme_name = "adw-gtk3"
+
+[commands]
+reboot = ["systemctl", "reboot"]
+poweroff = ["systemctl", "poweroff"]

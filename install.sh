@@ -26,7 +26,6 @@ ln -s ${BASEDIR}/darkman/switch-theme ~/.local/share/darkman/switch-theme
 ln -s ${BASEDIR}/xdg-desktop-portal ~/.config
 ln -s ${BASEDIR}/.zshrc ~/
 ln -s ${BASEDIR}/tofi.conf ~/.config
-ln -s ${BASEDIR}/otters.jpg ~/Pictures/
 ln -s ${BASEDIR}/oh-my-zsh/cypress.zsh-theme ~/.oh-my-zsh/custom/themes/
 
 FIREFOX_PROFILE_PATH=$(echo $HOME/.mozilla/firefox/*.default-release)
@@ -37,6 +36,11 @@ ln -s ${BASEDIR}/firefox/userChrome.css "$FIREFOX_PROFILE_PATH/chrome/userChrome
 # greetd config is system-wide and owned by root, so copy instead of symlink
 sudo mkdir -p /etc/greetd
 sudo cp ${BASEDIR}/greetd/config.toml /etc/greetd/config.toml
+sudo cp ${BASEDIR}/greetd/regreet.toml /etc/greetd/regreet.toml
 sudo cp ${BASEDIR}/greetd/hyprland.conf /etc/greetd/hyprland.conf
+
+# system-wide background image for greeter and desktop
+sudo mkdir -p /usr/share/backgrounds
+sudo cp ${BASEDIR}/otters.jpg /usr/share/backgrounds/
 
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3'
