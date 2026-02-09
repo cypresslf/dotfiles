@@ -99,6 +99,9 @@
     "nvidia-open",
     "nvidia-utils",
     "nvidia-settings",
-    "nvidia-prime"
+    "nvidia-prime",
+
+    "jq",
+    "chromium"
   ]
 }
