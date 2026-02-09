@@ -20,4 +20,7 @@ paru -S --noconfirm --needed \
   tofi \
   wl-screenrec \
   wlogout \
-  arch-manwarn
+  arch-manwarn \
+
+# enable services
+systemctl enable greetd

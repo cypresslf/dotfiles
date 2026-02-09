@@ -34,4 +34,9 @@ echo 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);' >
 mkdir -p "$FIREFOX_PROFILE_PATH/chrome"
 ln -s ${BASEDIR}/firefox/userChrome.css "$FIREFOX_PROFILE_PATH/chrome/userChrome.css"
 
+# greetd config is system-wide and owned by root, so copy instead of symlink
+sudo mkdir -p /etc/greetd
+sudo cp ${BASEDIR}/greetd/config.toml /etc/greetd/config.toml
+sudo cp ${BASEDIR}/greetd/hyprland.conf /etc/greetd/hyprland.conf
+
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3'
