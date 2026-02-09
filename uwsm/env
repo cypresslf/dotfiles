@@ -1,0 +1,8 @@
+export XCURSOR_SIZE=24
+
+# Use wayland for all electron apps
+# Note: you may have to run them with --disable-gpu if they fail to launch
+export ELECTRON_OZONE_PLATFORM_HINT=auto
+
+# Bug with vulkan in gtk4 prevents nautilus from launching. Remove when fixed.
+export GSK_RENDERER=ngl

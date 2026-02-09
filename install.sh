@@ -2,36 +2,39 @@
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-ln -s ${BASEDIR}/git ~/.config
-ln -s ${BASEDIR}/hypr ~/.config
-ln -s ${BASEDIR}/sway ~/.config
-ln -s ${BASEDIR}/waybar ~/.config
+ln -sf ${BASEDIR}/git ~/.config
+ln -sf ${BASEDIR}/hypr ~/.config
+ln -sf ${BASEDIR}/sway ~/.config
+ln -sf ${BASEDIR}/waybar ~/.config
 
 mkdir -p ~/.config/foot
-ln -s ${BASEDIR}/foot/foot.ini ~/.config/foot/foot.ini
-ln -s ${BASEDIR}/foot/dark.ini ~/.config/foot/dark.ini
-ln -s ${BASEDIR}/foot/light.ini ~/.config/foot/light.ini
-ln -s ${BASEDIR}/foot/light.ini ~/.config/foot/theme.ini
+ln -sf ${BASEDIR}/foot/foot.ini ~/.config/foot/foot.ini
+ln -sf ${BASEDIR}/foot/dark.ini ~/.config/foot/dark.ini
+ln -sf ${BASEDIR}/foot/light.ini ~/.config/foot/light.ini
+ln -sf ${BASEDIR}/foot/light.ini ~/.config/foot/theme.ini
 
 mkdir -p ~/.config/mako
-ln -s ${BASEDIR}/mako/config-dark ~/.config/mako/config-dark
-ln -s ${BASEDIR}/mako/config-light ~/.config/mako/config-light
-ln -s ${BASEDIR}/mako/config-light ~/.config/mako/config
+ln -sf ${BASEDIR}/mako/config-dark ~/.config/mako/config-dark
+ln -sf ${BASEDIR}/mako/config-light ~/.config/mako/config-light
+ln -sf ${BASEDIR}/mako/config-light ~/.config/mako/config
 
 mkdir -p ~/.config/darkman
 mkdir -p ~/.local/share/darkman
-ln -s ${BASEDIR}/darkman/config.yaml ~/.config/darkman/config.yaml
-ln -s ${BASEDIR}/darkman/switch-theme ~/.local/share/darkman/switch-theme
+ln -sf ${BASEDIR}/darkman/config.yaml ~/.config/darkman/config.yaml
+ln -sf ${BASEDIR}/darkman/switch-theme ~/.local/share/darkman/switch-theme
 
-ln -s ${BASEDIR}/xdg-desktop-portal ~/.config
-ln -s ${BASEDIR}/.zshrc ~/
-ln -s ${BASEDIR}/tofi.conf ~/.config
-ln -s ${BASEDIR}/oh-my-zsh/cypress.zsh-theme ~/.oh-my-zsh/custom/themes/
+mkdir -p ~/.config/uwsm
+ln -sf ${BASEDIR}/uwsm/env ~/.config/uwsm/env
+
+ln -sf ${BASEDIR}/xdg-desktop-portal ~/.config
+ln -sf ${BASEDIR}/.zshrc ~/
+ln -sf ${BASEDIR}/tofi.conf ~/.config
+ln -sf ${BASEDIR}/oh-my-zsh/cypress.zsh-theme ~/.oh-my-zsh/custom/themes/
 
 FIREFOX_PROFILE_PATH=$(echo $HOME/.mozilla/firefox/*.default-release)
 echo 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);' >> "$FIREFOX_PROFILE_PATH/user.js"
 mkdir -p "$FIREFOX_PROFILE_PATH/chrome"
-ln -s ${BASEDIR}/firefox/userChrome.css "$FIREFOX_PROFILE_PATH/chrome/userChrome.css"
+ln -sf ${BASEDIR}/firefox/userChrome.css "$FIREFOX_PROFILE_PATH/chrome/userChrome.css"
 
 # greetd config is system-wide and owned by root, so copy instead of symlink
 sudo mkdir -p /etc/greetd
