@@ -38,6 +38,8 @@ git
 base-devel
 firefox
 foot
+xdg-desktop-portal-gtk
+
 snapper
 sddm
 xorg-xinit
@@ -54,7 +56,6 @@ slurp
 qt6-wayland
 qt5-wayland
 grim
-xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 uwsm
 hyprland
